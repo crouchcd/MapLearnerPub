@@ -1,0 +1,291 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProjectGuid>{192B2C6B-D79A-4305-8EF3-67512F28E25C}</ProjectGuid>
+    <OutputType>AppContainerExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MapLearner</RootNamespace>
+    <AssemblyName>MapLearner</AssemblyName>
+    <DefaultLanguage>en-US</DefaultLanguage>
+    <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
+    <TargetPlatformVersion Condition=" '$(TargetPlatformVersion)' == '' ">10.0.10586.0</TargetPlatformVersion>
+    <TargetPlatformMinVersion>10.0.10586.0</TargetPlatformMinVersion>
+    <MinimumVisualStudioVersion>14</MinimumVisualStudioVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{A5A43C5B-DE2A-4C0C-9213-0A381AF9435A};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WindowsXamlEnableOverview>true</WindowsXamlEnableOverview>
+    <PackageCertificateKeyFile>MapLearner_TemporaryKey.pfx</PackageCertificateKeyFile>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+    <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|ARM'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\ARM\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>ARM</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|ARM'">
+    <OutputPath>bin\ARM\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>ARM</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+    <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+    <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+  </PropertyGroup>
+  <PropertyGroup>
+    <RestoreProjectStyle>PackageReference</RestoreProjectStyle>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="AboutPage.xaml.cs">
+      <DependentUpon>AboutPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AddHighScoreDialog.xaml.cs">
+      <DependentUpon>AddHighScoreDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DeleteSaveDialog.xaml.cs">
+      <DependentUpon>DeleteSaveDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GamePage.xaml.cs">
+      <DependentUpon>GamePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="HighScore.cs" />
+    <Compile Include="HighScoresDialog.xaml.cs">
+      <DependentUpon>HighScoresDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="HighScoresSelectionDialog.xaml.cs">
+      <DependentUpon>HighScoresSelectionDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="LoadDialog.xaml.cs">
+      <DependentUpon>LoadDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SavedData.cs" />
+    <Compile Include="SaveDialog.xaml.cs">
+      <DependentUpon>SaveDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SaveGame.cs" />
+    <Compile Include="MainPage.xaml.cs">
+      <DependentUpon>MainPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MapLearner.cs" />
+    <Compile Include="MapLearnerRegion.cs" />
+    <Compile Include="MapLearnerRegionHelper.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="State.cs" />
+    <Compile Include="XmlServiceClient.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <AppxManifest Include="Package.appxmanifest">
+      <SubType>Designer</SubType>
+    </AppxManifest>
+    <None Include="MapLearner_TemporaryKey.pfx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assets\Configurations\FileLocations.xml" />
+    <Content Include="Assets\Configurations\NorthAmerica.xml" />
+    <Content Include="Assets\Configurations\UnitedStates.xml" />
+    <Content Include="Assets\Icons\change.png" />
+    <Content Include="Assets\Icons\check_mark.png" />
+    <Content Include="Assets\Icons\delete.png" />
+    <Content Include="Assets\Icons\load.png" />
+    <Content Include="Assets\Icons\microphone.png" />
+    <Content Include="Assets\Icons\restart.png" />
+    <Content Include="Assets\Icons\save.png" />
+    <Content Include="Assets\Icons\stopwatch.png" />
+    <Content Include="Assets\Icons\text.png" />
+    <Content Include="Assets\Icons\world_icon.png" />
+    <Content Include="Assets\StateImages\NorthAmerica\Belize.gif" />
+    <Content Include="Assets\StateImages\NorthAmerica\Canada.gif" />
+    <Content Include="Assets\StateImages\NorthAmerica\CostaRica.gif" />
+    <Content Include="Assets\StateImages\NorthAmerica\Cuba.gif" />
+    <Content Include="Assets\StateImages\NorthAmerica\ElSalvador.gif" />
+    <Content Include="Assets\StateImages\NorthAmerica\Greenland.gif" />
+    <Content Include="Assets\StateImages\NorthAmerica\Guatemala.gif" />
+    <Content Include="Assets\StateImages\NorthAmerica\Haiti.gif" />
+    <Content Include="Assets\StateImages\NorthAmerica\Honduras.gif" />
+    <Content Include="Assets\StateImages\NorthAmerica\Jamaica.gif" />
+    <Content Include="Assets\StateImages\NorthAmerica\Mexico.gif" />
+    <Content Include="Assets\StateImages\NorthAmerica\Nicaragua.gif" />
+    <Content Include="Assets\StateImages\NorthAmerica\Panama.gif" />
+    <Content Include="Assets\StateImages\NorthAmerica\PuertoRico.gif" />
+    <Content Include="Assets\StateImages\NorthAmerica\UnitedStates.gif" />
+    <Content Include="Assets\StateImages\UnitedStates\Alabama.png" />
+    <Content Include="Assets\StateImages\UnitedStates\Alaska.png" />
+    <Content Include="Assets\StateImages\UnitedStates\Arizona.png" />
+    <Content Include="Assets\StateImages\UnitedStates\Arkansas.png" />
+    <Content Include="Assets\StateImages\UnitedStates\California.png" />
+    <Content Include="Assets\StateImages\UnitedStates\Colorado.png" />
+    <Content Include="Assets\StateImages\UnitedStates\Connecticut.png" />
+    <Content Include="Assets\StateImages\UnitedStates\Delaware.png" />
+    <Content Include="Assets\StateImages\UnitedStates\Florida.png" />
+    <Content Include="Assets\StateImages\UnitedStates\Georgia.png" />
+    <Content Include="Assets\StateImages\UnitedStates\Hawaii.png" />
+    <Content Include="Assets\StateImages\UnitedStates\Idaho.png" />
+    <Content Include="Assets\StateImages\UnitedStates\Illinois.png" />
+    <Content Include="Assets\StateImages\UnitedStates\Indiana.png" />
+    <Content Include="Assets\StateImages\UnitedStates\Iowa.png" />
+    <Content Include="Assets\StateImages\UnitedStates\Kansas.png" />
+    <Content Include="Assets\StateImages\UnitedStates\Kentucky.png" />
+    <Content Include="Assets\StateImages\UnitedStates\Louisiana.png" />
+    <Content Include="Assets\StateImages\UnitedStates\Maine.png" />
+    <Content Include="Assets\StateImages\UnitedStates\Maryland.png" />
+    <Content Include="Assets\StateImages\UnitedStates\Massachusetts.png" />
+    <Content Include="Assets\StateImages\UnitedStates\Michigan.png" />
+    <Content Include="Assets\StateImages\UnitedStates\Minnesota.png" />
+    <Content Include="Assets\StateImages\UnitedStates\Mississippi.png" />
+    <Content Include="Assets\StateImages\UnitedStates\Missouri.png" />
+    <Content Include="Assets\StateImages\UnitedStates\Montana.png" />
+    <Content Include="Assets\StateImages\UnitedStates\Nebraska.png" />
+    <Content Include="Assets\StateImages\UnitedStates\Nevada.png" />
+    <Content Include="Assets\StateImages\UnitedStates\NewHampshire.png" />
+    <Content Include="Assets\StateImages\UnitedStates\NewJersey.png" />
+    <Content Include="Assets\StateImages\UnitedStates\NewMexico.png" />
+    <Content Include="Assets\StateImages\UnitedStates\NewYork.png" />
+    <Content Include="Assets\StateImages\UnitedStates\NorthCarolina.png" />
+    <Content Include="Assets\StateImages\UnitedStates\NorthDakota.png" />
+    <Content Include="Assets\StateImages\UnitedStates\Ohio.png" />
+    <Content Include="Assets\StateImages\UnitedStates\Oklahoma.png" />
+    <Content Include="Assets\StateImages\UnitedStates\Oregon.png" />
+    <Content Include="Assets\StateImages\UnitedStates\Pennsylvania.png" />
+    <Content Include="Assets\StateImages\UnitedStates\RhodeIsland.png" />
+    <Content Include="Assets\StateImages\UnitedStates\SouthCarolina.png" />
+    <Content Include="Assets\StateImages\UnitedStates\SouthDakota.png" />
+    <Content Include="Assets\StateImages\UnitedStates\Tennessee.png" />
+    <Content Include="Assets\StateImages\UnitedStates\Texas.png" />
+    <Content Include="Assets\StateImages\UnitedStates\Utah.png" />
+    <Content Include="Assets\StateImages\UnitedStates\Vermont.png" />
+    <Content Include="Assets\StateImages\UnitedStates\Virginia.png" />
+    <Content Include="Assets\StateImages\UnitedStates\Washington.png" />
+    <Content Include="Assets\StateImages\UnitedStates\WestVirginia.png" />
+    <Content Include="Assets\StateImages\UnitedStates\Wisconsin.png" />
+    <Content Include="Assets\StateImages\UnitedStates\Wyoming.png" />
+    <Content Include="Properties\Default.rd.xml" />
+    <Content Include="Assets\LockScreenLogo.scale-200.png" />
+    <Content Include="Assets\SplashScreen.scale-200.png" />
+    <Content Include="Assets\Square150x150Logo.scale-200.png" />
+    <Content Include="Assets\Square44x44Logo.scale-200.png" />
+    <Content Include="Assets\Square44x44Logo.targetsize-24_altform-unplated.png" />
+    <Content Include="Assets\StoreLogo.png" />
+    <Content Include="Assets\Wide310x150Logo.scale-200.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Page Include="AboutPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AddHighScoreDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DeleteSaveDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="GamePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="HighScoresDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="HighScoresSelectionDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="LoadDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="SaveDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform">
+      <Version>5.4.0</Version>
+    </PackageReference>
+    <PackageReference Include="System.Xml.XPath.XDocument">
+      <Version>4.3.0</Version>
+    </PackageReference>
+  </ItemGroup>
+  <ItemGroup />
+  <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
+    <VisualStudioVersion>14.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\WindowsXaml\v$(VisualStudioVersion)\Microsoft.Windows.UI.Xaml.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

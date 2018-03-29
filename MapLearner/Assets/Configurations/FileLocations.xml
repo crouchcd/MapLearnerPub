@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<fileLocations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <fileLocation>
+    <type>UnitedStates</type>
+    <filePath>Assets/Configurations/UnitedStates.xml</filePath>
+  </fileLocation>
+  <fileLocation>
+    <type>NorthAmerica</type>
+    <filePath>Assets/Configurations/NorthAmerica.xml</filePath>
+  </fileLocation>
+</fileLocations>

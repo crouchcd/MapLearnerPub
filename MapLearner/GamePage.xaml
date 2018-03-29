@@ -1,0 +1,139 @@
+﻿<Page
+    x:Class="MapLearner.GamePage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:MapLearner"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+	<!--Source-->
+	<!--https://blogs.msdn.microsoft.com/quick_thoughts/2015/06/01/windows-10-splitview-build-your-first-hamburger-menu/-->
+	<SplitView x:Name="MySplitView" DisplayMode="CompactOverlay" IsPaneOpen="False" 
+              CompactPaneLength="48" OpenPaneLength="200">
+		<SplitView.Pane>
+			<StackPanel Background="Gray" Margin="0,0,2,0">
+				<Button x:Name="HamburgerButton" FontFamily="Segoe MDL2 Assets" Content="&#xE700;"
+                    Width="50" Height="50" Background="Transparent" Click="HamburgerButton_Click" HorizontalAlignment="Left" Margin="-1,20,0,0"/>
+				<!--New Game Button-->
+				<StackPanel Orientation="Horizontal">
+					<Border Margin="0,0,0,15" Height="33" Width="50">
+						<Image Source="ms-appx://MapLearner/Assets/Icons/restart.png"/>
+					</Border>
+					<Button  Margin="0,0,0,15"  FontWeight="Bold" FontFamily="Arial" Foreground="White" Name="newGameButton" Click="newGameButton_Click" Content="New Game" FontSize="18" VerticalAlignment="Center" Width="141" />
+				</StackPanel>
+				<!--Change Map Button-->
+				<StackPanel Orientation="Horizontal">
+					<Border Margin="0,0,0,15" Height="33" Width="50">
+						<Image Source="ms-appx://MapLearner/Assets/Icons/change.png"/>
+					</Border>
+					<Button FontWeight="Bold" FontFamily="Arial" Foreground="White" Name="changeMapButton"  Margin="0,0,0,15"  Content="Change Map" FontSize="18" VerticalAlignment="Center" Click="changeMapButton_Click" Width="141" />
+				</StackPanel>
+				<!--Timed Mode Button-->
+				<StackPanel Orientation="Horizontal">
+					<Border Margin="0,0,0,15" Height="33" Width="50">
+						<Image Source="ms-appx://MapLearner/Assets/Icons/stopwatch.png"/>
+					</Border>
+					<Button FontWeight="Bold" FontFamily="Arial" Foreground="White" Name="timedModeButton" Margin="0,0,0,15"  Content="Timed Mode" FontSize="18" VerticalAlignment="Center" Width="141" Click="timedModeButton_Click" />
+				</StackPanel>
+				<Border Height="2" BorderBrush="Black" Background="White" Margin="54,0,0,15"/>
+				<!--Speech Input Mode Button-->
+				<StackPanel Orientation="Horizontal">
+					<Border Margin="0,0,0,15" Height="33" Width="50">
+						<Image Source="ms-appx://MapLearner/Assets/Icons/microphone.png"/>
+					</Border>
+					<Button FontWeight="Bold" FontFamily="Arial" Foreground="White" Name="speechInputModeButton" Margin="0,0,0,15" Content="Speech Input" FontSize="18" VerticalAlignment="Center" Width="141" Click="speechInputModeButton_Click"/>
+				</StackPanel>
+				<!--Text Input Mode Button-->
+				<StackPanel Orientation="Horizontal">
+					<Border Margin="0,0,0,15" Height="33" Width="50">
+						<Image Source="ms-appx://MapLearner/Assets/Icons/text.png"/>
+					</Border>
+					<Button FontWeight="Bold" FontFamily="Arial" Foreground="White" Name="textInputModeButton"  Margin="0,0,0,15"  Content="Text Input" FontSize="18" VerticalAlignment="Center" Width="141" Click="textInputModeButton_Click"/>
+				</StackPanel>
+				<Border Height="2" BorderBrush="Black" Background="White" Margin="54,0,0,15"/>
+				<!--Save Game Button-->
+				<StackPanel Orientation="Horizontal">
+					<Border Margin="0,0,0,15" Height="33" Width="50">
+						<Image Source="ms-appx://MapLearner/Assets/Icons/save.png"/>
+					</Border>
+					<Button FontWeight="Bold" FontFamily="Arial" Foreground="White" Name="saveGameButton" Margin="0,0,0,15" Content="Save Game" FontSize="18" VerticalAlignment="Center" Width="141" Click="saveGameButton_Click" />
+				</StackPanel>
+				<!--Load Game Button-->
+				<StackPanel Margin="0,1" Orientation="Horizontal">
+					<Border Margin="0,0,0,15" Height="33" Width="50">
+						<Image Source="ms-appx://MapLearner/Assets/Icons/load.png"/>
+					</Border>
+					<Button FontWeight="Bold" FontFamily="Arial" Foreground="White" Name="loadGameButton" Margin="0,0,0,15" Content="Load Game" FontSize="18" VerticalAlignment="Center" Width="141" Click="loadGameButton_Click" />
+				</StackPanel>
+				<!--Delete Save Button-->
+				<StackPanel Margin="0,1" Orientation="Horizontal">
+					<Border Margin="0,0,0,15" Height="33" Width="50">
+						<Image Source="ms-appx://MapLearner/Assets/Icons/delete.png"/>
+					</Border>
+					<Button FontWeight="Bold" FontFamily="Arial" Foreground="White" Name="deleteSaveButton" Margin="0,0,0,15" Content="Delete Save" FontSize="18" VerticalAlignment="Center" Width="141" Click="deleteSaveButton_Click" />
+				</StackPanel>
+			</StackPanel>
+		</SplitView.Pane>
+		<SplitView.Content>
+			<Grid Background="White">
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="2*"/>
+					<ColumnDefinition Width="7*"/>
+					<ColumnDefinition Width="7*"/>
+					<ColumnDefinition Width="1*"/>
+				</Grid.ColumnDefinitions>
+				<Grid.RowDefinitions>
+					<RowDefinition Height="1*"/>
+					<RowDefinition Height="6*"/>
+					<RowDefinition Height="3*"/>
+					<RowDefinition Height="0.3*"/>
+				</Grid.RowDefinitions>
+				<Border Grid.Row="0" Grid.RowSpan="4" Grid.Column="0" Grid.ColumnSpan="4" Background="#1f3d7a">
+				</Border>
+				<Border Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Background="#152951"></Border>
+				<!--Map Title-->
+				<StackPanel Grid.Column="1" Grid.ColumnSpan="2" Margin="40,0,0,0" VerticalAlignment="Center">
+					<TextBlock FontFamily="Arial" FontSize="22" Foreground="White" Name="regionLabel" FontWeight="Bold" TextAlignment="Center"/>
+				</StackPanel>
+				<!--Map Image-->
+				<Border BorderThickness="1" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2">
+					<Image x:Name="mapImage"></Image>
+				</Border>
+				<!--Input Control Border-->
+				<Border Background="White" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2"/>
+				<Border Grid.Row="2" Grid.Column="1" BorderBrush="DarkGray" BorderThickness="1"/>
+				<Border Grid.Row="2" Grid.Column="2" BorderBrush="DarkGray" BorderThickness="1"/>
+				<!--Speech Stack Panel-->
+				<StackPanel HorizontalAlignment="Left" Grid.Row="2" Grid.Column="1" Orientation="Vertical">
+					<Button FontFamily="Arial" Name="speechButton" Click="speechButton_Click" FontSize="20" Margin="10" Content="Speak"/>
+					<StackPanel Orientation="Horizontal">
+						<TextBlock FontFamily="Arial" Name="heardYouSayLabel" Margin="10,0,0,0" FontSize="20" Text="Heard you say:"/>
+						<TextBlock FontFamily="Arial" FontWeight="Bold" FontSize="20" Name="speechOutputBox" Margin="10,0,0,0" Width="431"/>
+					</StackPanel>
+				</StackPanel>
+				<!--Text Input Stack Panel-->
+				<StackPanel HorizontalAlignment="Left" Grid.Row="2" Grid.Column="2" Orientation="Vertical">
+					<TextBlock FontFamily="Arial" FontSize="20" Margin="10" Name="textInputLabel" Text="Type your answer:"/>
+					<StackPanel Orientation="Horizontal">
+						<TextBox Margin="10,10,0,0" KeyDown="textInputBox_KeyDown" Name="textInputBox" Width="260"/>
+						<Button FontFamily="Arial" FontSize="20" Margin="10,10,0,0" Name="textInputEnterButton" Click="textInputEnterButton_Click" Content="Enter"/>
+					</StackPanel>
+				</StackPanel>
+				<!--Score Output-->
+				<StackPanel VerticalAlignment="Bottom" Grid.Row="1" Grid.Column="1">
+					<StackPanel Orientation="Horizontal">
+						<Border Background="White" Height="49" Margin="5,0,0,0">
+							<TextBlock FontFamily="Arial" Margin="10,0,10,0" VerticalAlignment="Center" Name="scoreOutputLabel" TextWrapping="Wrap" FontWeight="Bold" TextAlignment="Center"/>
+						</Border>
+						<Border Background="White" Margin="0,10,0,10" Name="scoreOutputLabelBorder" Width="54" Height="49">
+							<Image Source="ms-appx://MapLearner/Assets/Icons/check_mark.png"/>
+						</Border>
+					</StackPanel>
+				</StackPanel>
+				<Border Name="speechBorder" Grid.Row="2" Grid.Column="1"></Border>
+				<Border Name="textBorder" Grid.Row="2" Grid.Column="2"></Border>
+			</Grid>
+		</SplitView.Content>
+	</SplitView>
+</Page>

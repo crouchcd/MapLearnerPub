@@ -1,0 +1,53 @@
+﻿<Page
+    x:Class="MapLearner.AboutPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:MapLearner"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <!--Example found from-->
+    <!--https://docs.microsoft.com/en-us/windows/uwp/design/layout/grid-tutorial-->
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="5*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Border Background="White">
+            <Image Source="ms-appx://MapLearner/Assets/Icons/world_icon.png"></Image>
+        </Border>
+        <Border Grid.Column ="1" Background="#2f5cb6">
+            <ListView/>
+        </Border>
+        <Border Grid.Row="1" Grid.ColumnSpan="2" Background="#152951"/>
+        <StackPanel Grid.Column="1" Margin="40,0,0,0" VerticalAlignment="Center">
+            <TextBlock Margin="0,0,0,10" Foreground="White" FontSize="25" Text="MapLearner is a tool to make learning geography fun." FontWeight="Bold" FontFamily="Arial"/>
+            <TextBlock Foreground="White" FontSize="25" Text="It features:" FontWeight="Bold" FontFamily="Arial"/>
+            <ListView IsTapEnabled="False">
+                <ListViewItem FontFamily="Arial" FontWeight="Bold" Foreground="White" FontSize="25">
+                   - Standard quiz mode
+                </ListViewItem>
+                <ListViewItem FontFamily="Arial" FontWeight="Bold" Foreground="White" FontSize="25">
+                    - Timed quiz mode
+                </ListViewItem>
+                <ListViewItem FontFamily="Arial" FontWeight="Bold" Foreground="White" FontSize="25">
+                    - Several different geographies
+                </ListViewItem>
+                <ListView.ItemContainerStyle>
+                    <Style TargetType="ListViewItem">
+                        <Setter Property="IsHitTestVisible" Value="False"/>
+                    </Style>
+                </ListView.ItemContainerStyle>
+            </ListView>
+        </StackPanel>
+        <StackPanel Grid.Row="1" Grid.ColumnSpan="2" Orientation="Horizontal"
+            HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBlock FontFamily="Arial" FontWeight="Bold" Foreground="White" FontSize="25" Text="Created by Alec Watson and Cameron Crouch" Margin="0,0,20,0"/>
+        </StackPanel>
+    </Grid>
+</Page>
